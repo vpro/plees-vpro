@@ -1,38 +1,23 @@
 require 'net/http'
 
-class NiceController < ApplicationController
+class PleesController < ApplicationController
   
-  DEFAULT_FAMILY = "vanilla"
-  SPECIAL_FAMILY = "5.0"
-  
+  DEFAULT_FAMILY = "vpro"
+
   def index
   end
   
-  def vanilla
+  def vpro
     width = params[:width]
     height = params[:height]
     family = DEFAULT_FAMILY
     handleimage(width, height, family)
   end
   
-  def vanillasquare
+  def vprosquare
     width = params[:square]
     height = params[:square]
     family = DEFAULT_FAMILY
-    handleimage(width, height, family)    
-  end
-  
-  def fivepointoh
-    width = params[:width]
-    height = params[:height]
-    family = SPECIAL_FAMILY
-    handleimage(width, height, family)      
-  end
-  
-  def fivepointohsquare
-    width = params[:square]
-    height = params[:square]
-    family = SPECIAL_FAMILY
     handleimage(width, height, family)    
   end
   
@@ -68,13 +53,13 @@ class NiceController < ApplicationController
   def choosepic(desiredWidth, desiredHeight, orientation, family)
     if family == DEFAULT_FAMILY
       if orientation == "landscape"
-        if desiredWidth <= 300
+        if desiredWidth <= 200
           pic = 1
-        elsif desiredWidth <= 450
+        elsif desiredWidth <= 400
           pic = 2
         elsif desiredWidth <= 600
           pic = 3
-        elsif desiredWidth <= 1000
+        elsif desiredWidth <= 800
           pic = 4
         else
           pic = 5
@@ -88,24 +73,6 @@ class NiceController < ApplicationController
           pic = 3
         else
           pic = 4
-        end
-      end
-    elsif family == SPECIAL_FAMILY
-      if orientation == "landscape"
-        if desiredWidth <= 300
-          pic = 1
-        elsif desiredWidth <= 600
-          pic = 2
-        else
-          pic = 3
-        end
-      elsif orientation == "portrait"
-        if desiredWidth <= 300
-          pic = 1
-        elsif desiredWidth <= 600
-          pic = 2
-        else
-          pic = 3
         end
       end
     end

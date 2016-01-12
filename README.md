@@ -18,13 +18,6 @@ http://nicenicejpg.com/350
 ```
 This URL returns a square image of Vanilla with width and height of 350 pixels. The sole parameter represents the *width* and *height* of the square image. 
 
-### A Special Treat
-
-```html
-http://nicenicejpg.com/5.0/400/200
-```
-Preface the width and height with "5.0" to switch into "Early 90's Mustang" mode.
-
 ## License
 
 The MIT License (MIT)
