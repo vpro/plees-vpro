@@ -39,7 +39,7 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.7.7)
+    json (1.8.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -72,7 +72,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
-    rmagick (2.12.0)
+    rmagick (2.15.4)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -94,5 +94,8 @@ PLATFORMS
 DEPENDENCIES
   jquery-rails
   rails (= 3.2.11)
-  rmagick (= 2.12.0)
+  rmagick (= 2.15.4)
   uglifier (>= 1.0.3)
+
+BUNDLED WITH
+   1.11.2
