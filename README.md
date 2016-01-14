@@ -27,7 +27,9 @@ This URL returns a square VPRO image with width and height of 350 pixels. The so
 
 Install at least Ruby#v2.2.4 through [RVM](https://rvm.io/).
 
-Install [bundler](http://bundler.io/)
+Install [bundler](http://bundler.io/) through 
+
+`gem install bundler`
 
 Then do `bundle install`
 
