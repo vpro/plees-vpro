@@ -24,6 +24,18 @@ This URL returns a square VPRO image with width and height of 350 pixels. The so
 
 `brew install imagemagick` to be able to install rmagick
 
+
+Install at least Ruby#v2.2.4 through [RVM](https://rvm.io/).
+
+Install [bundler](http://bundler.io/)
+
+Then do `bundle install`
+
+## running the server locally
+After installing all prerequisites do:
+
+`rails server` from the root of the project and visit [localhost:3000](http://localhost:3000). Jeejj!
+
 ## License
 
 The MIT License (MIT)
