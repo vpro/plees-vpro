@@ -18,6 +18,12 @@ http://plees-vpro.herokuapp.com/350
 ```
 This URL returns a square VPRO image with width and height of 350 pixels. The sole parameter represents the *width* and *height* of the square image. 
 
+## install prerequisites
+
+`brew update`
+
+`brew install imagemagick` to be able to install rmagick
+
 ## License
 
 The MIT License (MIT)

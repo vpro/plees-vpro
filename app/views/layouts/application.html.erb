@@ -3,11 +3,9 @@
 <head>
   <title>Plees VPRO</title>
   <meta property="og:title" content="Plees VPRO"/>
-  <!--
-  <meta property="og:url" content="http://nicenicejpg.com"/>
-  <meta property="og:image" content="http://nicenicejpg.com/ice.jpg"/>
-  <meta property="og:site_name" content="Nice Nice JPG"/>
-  -->
+  <meta property="og:url" content="http://plees-vpro.herokuapp.com"/>
+  <meta property="og:image" content="http://plees-vpro.herokuapp.com/vpro-logo-social.png"/>
+  <meta property="og:site_name" content="Plees VPRO"/>
   <meta property="og:description"
         content="The only image placeholder service on the web bringing you nothing but VPRO jpgs."/>
                      
@@ -15,11 +13,12 @@
   <%= javascript_include_tag "application" %>
   <link rel="icon" href="/favicon.ico" type="image/ico" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
-  <script type="text/javascript" src="//use.typekit.net/mub8ljb.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" type="text/css" href="https://files.vpro.nl/fontface/vpro_vesta/font.css" media="screen, projection, print">
+  <link rel="stylesheet" type="text/css" href="https://files.vpro.nl/fontface/simplistic_sans/font.css" media="screen, projection, print">
+  <link rel="stylesheet" type="text/css" href="https://files.vpro.nl/fontface/iconfont/iconfont.css" media="screen, projection, print">
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="vpro-vesta-medium">
 
 <%= yield %>
 
