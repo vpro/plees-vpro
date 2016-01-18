@@ -66,7 +66,7 @@ class PleesController < ApplicationController
   def choosepic(desiredWidth, desiredHeight, orientation, family, random)
     if family == DEFAULT_FAMILY
       if orientation == "landscape" && random
-        pic = 1 + rand(5)
+        pic = 1 + rand(13)
       elsif orientation == "landscape"
         if desiredWidth <= 200
           pic = 1
@@ -80,7 +80,7 @@ class PleesController < ApplicationController
           pic = 5
         end
       elsif orientation == "portrait" && random
-        pic = 1 + rand(5)
+        pic = 1 + rand(8)
       elsif orientation == "portrait"
         if desiredWidth <= 250
           pic = 1
