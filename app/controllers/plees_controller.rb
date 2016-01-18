@@ -4,21 +4,34 @@ class PleesController < ApplicationController
   
   DEFAULT_FAMILY = "vpro"
 
+
   def index
   end
   
   def vpro
     width = params[:width]
     height = params[:height]
+    random = params[:random]
+    if random
+      random = true
+    else
+      random = false
+    end
     family = DEFAULT_FAMILY
-    handleimage(width, height, family)
+    handleimage(width, height, family, random)
   end
   
   def vprosquare
     width = params[:square]
     height = params[:square]
+    random = params[:random]
+    if random
+      random = true
+    else
+      random = false
+    end
     family = DEFAULT_FAMILY
-    handleimage(width, height, family)    
+    handleimage(width, height, family, random)
   end
   
   private 
@@ -26,7 +39,7 @@ class PleesController < ApplicationController
   def do_nothing
   end
   
-  def handleimage(desiredWidth, desiredHeight, family)
+  def handleimage(desiredWidth, desiredHeight, family, random)
     
       desiredWidth = desiredWidth.to_i > 1001 ? 1001 : desiredWidth.to_i
       desiredWidth = desiredWidth.to_i < 1 ? 1 : desiredWidth.to_i
@@ -37,7 +50,7 @@ class PleesController < ApplicationController
       orientation = (desiredWidth >= desiredHeight) ? "landscape" : "portrait"
       
       #get a pic
-      pic = choosepic(desiredWidth.to_i, desiredHeight.to_i, orientation, family)
+      pic = choosepic(desiredWidth.to_i, desiredHeight.to_i, orientation, family, random)
       
       #open and resize the image
       image = Magick::Image.read(File.expand_path("../../pics/#{family}/#{orientation}/#{pic}.jpg", __FILE__)).first
@@ -50,9 +63,11 @@ class PleesController < ApplicationController
       send_data image_as_blob, :type => "image/jpeg", :disposition => "inline"
   end
   
-  def choosepic(desiredWidth, desiredHeight, orientation, family)
+  def choosepic(desiredWidth, desiredHeight, orientation, family, random)
     if family == DEFAULT_FAMILY
-      if orientation == "landscape"
+      if orientation == "landscape" && random
+        pic = 1 + rand(5)
+      elsif orientation == "landscape"
         if desiredWidth <= 200
           pic = 1
         elsif desiredWidth <= 400
@@ -64,6 +79,8 @@ class PleesController < ApplicationController
         else
           pic = 5
         end
+      elsif orientation == "portrait" && random
+        pic = 1 + rand(5)
       elsif orientation == "portrait"
         if desiredWidth <= 250
           pic = 1

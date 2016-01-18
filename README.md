@@ -11,12 +11,22 @@ http://plees-vpro.herokuapp.com/400/200
 ```
 This URL will return a 400-pixel-wide by 200-pixel-tall picture of a VPRO character. The first parameter represents the *width*, the second parameter is the *height*.
 
+```html
+http://plees-vpro.herokuapp.com/400/200/r
+```
+Will return a 400x200-pixel random image
+
 ### Square
 
 ```html
 http://plees-vpro.herokuapp.com/350
 ```
 This URL returns a square VPRO image with width and height of 350 pixels. The sole parameter represents the *width* and *height* of the square image. 
+
+```html
+http://plees-vpro.herokuapp.com/350/r
+```
+Will return a 350x350-pixel random image
 
 ## install prerequisites
 
